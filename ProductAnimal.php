@@ -1,5 +1,5 @@
 <?php
-class ProdottiAnimali {
+class ProductAnimal {
     public $animale;
     public $categoria;
     public $prodotto;
@@ -17,7 +17,5 @@ class ProdottiAnimali {
 
     }
 }
-
-
 
 ?>

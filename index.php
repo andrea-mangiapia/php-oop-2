@@ -4,22 +4,23 @@
 // L'utente potrà sia comprare i prodotti senza registrarsi, oppure iscriversi e ricevere il 20% di sconto su tutti i prodotti.
 // BONUS:
 // Il pagamento avviene con la carta prepagata che deve contenere un saldo sufficiente all'acquisto. 
-require_once __DIR__ . '/ProdottiAnimali.php';
+require_once __DIR__ . '/ProductAnimal.php';
+require_once __DIR__ . '/UserRegistered.php';
+require_once __DIR__ . '/UserNoRegistered.php';
 
-
-$friskiesDog = new ProdottiAnimali('Cani','Cibo');
+$friskiesDog = new ProductAnimal('Cani','Cibo');
 $friskiesDog->prodotto = 'Friskies Dog';
 $friskiesDog->prezzo = 20;
 
-$kiteKatCat = new ProdottiAnimali('Gatto', 'Cibo');
+$kiteKatCat = new ProductAnimal('Gatto', 'Cibo');
 $kiteKatCat->prodotto = 'Kitekat Cat';
 $kiteKatCat->prezzo = 15;
 
-$tiragraffiCat = new ProdottiAnimali('Gatti', 'Giochi');
+$tiragraffiCat = new ProductAnimal('Gatti', 'Giochi');
 $tiragraffiCat->prodotto = 'tiragraffi';
 $tiragraffiCat->prezzo = 5;
 
-$frontlineDog = new ProdottiAnimali('Cani', 'Antiparassitari');
+$frontlineDog = new ProductAnimal('Cani', 'Antiparassitari');
 $frontlineDog->prodotto = 'tiragraffi';
 $frontlineDog->prezzo = 30;
 
@@ -27,6 +28,10 @@ $frontlineDog->prezzo = 30;
 // var_dump($kiteKatCat);
 // var_dump($tiragraffiCat);
 // var_dump($frontlineDog);
+
+$Andrea = new UserRegistered('Andrea', 'Bianchi', 'andreabianchi@mail.it');
+
+$Anonimo = new UserNoRegistered('Anonimo', '-', '-')
 
 ?>
 
@@ -46,7 +51,10 @@ $frontlineDog->prezzo = 30;
             Prodotti per animali
         </h1>
         <div>
-            Profilo: [Non Registrato/Registrato]
+            <?php
+                echo $Andrea->userRegistationCheck();
+
+            ?>
         </div>
     </header>
     <main>
