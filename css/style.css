@@ -16,3 +16,11 @@ header {
     margin: 0 auto;
     padding: 40px 0;
 }
+.am-product {
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #8cd18c;
+}
+.am-product h3 {
+    padding-bottom: 10px;
+}

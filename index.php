@@ -8,25 +8,25 @@ require_once __DIR__ . '/ProdottiAnimali.php';
 
 
 $friskiesDog = new ProdottiAnimali('Cani','Cibo');
-$friskiesDog->brand = 'Friskies Dog';
-$friskiesDog->price = 20;
+$friskiesDog->prodotto = 'Friskies Dog';
+$friskiesDog->prezzo = 20;
 
 $kiteKatCat = new ProdottiAnimali('Gatto', 'Cibo');
-$kiteKatCat->brand = 'Kitekat Cat';
-$kiteKatCat->price = 15;
+$kiteKatCat->prodotto = 'Kitekat Cat';
+$kiteKatCat->prezzo = 15;
 
 $tiragraffiCat = new ProdottiAnimali('Gatti', 'Giochi');
-$tiragraffiCat->brand = 'tiragraffi';
-$tiragraffiCat->price = 5;
+$tiragraffiCat->prodotto = 'tiragraffi';
+$tiragraffiCat->prezzo = 5;
 
 $frontlineDog = new ProdottiAnimali('Cani', 'Antiparassitari');
-$frontlineDog->brand = 'tiragraffi';
-$frontlineDog->price = 30;
+$frontlineDog->prodotto = 'tiragraffi';
+$frontlineDog->prezzo = 30;
 
-var_dump($friskiesDog);
-var_dump($kiteKatCat);
-var_dump($tiragraffiCat);
-var_dump($frontlineDog);
+// var_dump($friskiesDog);
+// var_dump($kiteKatCat);
+// var_dump($tiragraffiCat);
+// var_dump($frontlineDog);
 
 ?>
 
@@ -43,7 +43,7 @@ var_dump($frontlineDog);
 <body>
     <header>
         <h1>
-            Prodotti per animali 2
+            Prodotti per animali
         </h1>
         <div>
             Profilo: [Non Registrato/Registrato]
@@ -54,8 +54,17 @@ var_dump($frontlineDog);
             <h2>
                 Prodotti più venduti
             </h2>
-            <div>
-                [prodotti]
+            <div class="am-product">
+                <?php echo $friskiesDog ->getInfo() ?>
+            </div>
+            <div class="am-product">
+                <?php echo $kiteKatCat ->getInfo() ?>
+            </div>
+            <div class="am-product">
+                <?php echo $tiragraffiCat ->getInfo() ?>
+            </div>
+            <div class="am-product">
+                <?php echo $frontlineDog ->getInfo() ?>
             </div>
         </section>
     </main>

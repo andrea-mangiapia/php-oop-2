@@ -11,9 +11,9 @@ class ProdottiAnimali {
     }
 
     public function getInfo() {
-        return "$this->categoria per $this->animale<br>
-                Prodotto: $this->prodotto<br>
-                Prezzo: $this->prezzo &euro;";
+        return "<h3>$this->categoria per $this->animale</h3>
+                <div><b>Prodotto:</b> $this->prodotto</div>
+                <div><b>Prezzo:</b> $this->prezzo &euro;</div>";
 
     }
 }
