@@ -20,5 +20,11 @@ class User {
             return "Ciao $this->nome! Hai diritto al $this->sconto% sui nostri prodotti";
         }
     }
+
+    public function prodottiNelCarrello($prodottiScelti) {
+        foreach($prodottiScelti as $prodottoscelto) {
+            $this->carrello[] = $prodottoscelto;
+        }
+    }
 }
 ?>

@@ -30,6 +30,11 @@ $frontlineDog->prezzo = 30;
 // var_dump($frontlineDog);
 
 $Andrea = new UserRegistered('Andrea', 'Bianchi', 'andreabianchi@mail.it');
+$Andrea->nomeUtenteCarta = 'Andrea Bianchi';
+$Andrea->numeroCarta = '5333 1234 1234';
+$Andrea->scadenzaCarta = '12/25';
+$Andrea->cvv = '345';
+$Andrea->saldoDisponibile = 30;
 
 $Anonimo = new UserNoRegistered('Anonimo', '-', '-')
 
@@ -60,19 +65,28 @@ $Anonimo = new UserNoRegistered('Anonimo', '-', '-')
     <main>
         <section class="container">
             <h2>
+                Carrello
+            </h2>
+            <div>
+                <?php
+                    $Andrea->prodottiScelti([$friskiesDog, $frontlineDog])
+
+                ?>
+            </div>
+            <h2>
                 Prodotti più venduti
             </h2>
             <div class="am-product">
-                <?php echo $friskiesDog ->getInfo() ?>
+                <?php echo $friskiesDog->getInfo() ?>
             </div>
             <div class="am-product">
-                <?php echo $kiteKatCat ->getInfo() ?>
+                <?php echo $kiteKatCat->getInfo() ?>
             </div>
             <div class="am-product">
-                <?php echo $tiragraffiCat ->getInfo() ?>
+                <?php echo $tiragraffiCat->getInfo() ?>
             </div>
             <div class="am-product">
-                <?php echo $frontlineDog ->getInfo() ?>
+                <?php echo $frontlineDog->getInfo() ?>
             </div>
         </section>
     </main>
