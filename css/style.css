@@ -23,3 +23,12 @@ header {
 .am-product h3 {
     padding-bottom: 10px;
 }
+.am-cart li {
+    margin-left: 16px;
+    padding-bottom: 5px;
+}
+.am-cart-total {
+    padding-bottom: 30px;
+    font-size: 18px;
+    font-weight: 700;
+}

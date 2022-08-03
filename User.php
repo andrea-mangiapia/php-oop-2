@@ -1,4 +1,5 @@
 <?php
+
 class User {
     public $nome;
     public $cognome;
@@ -7,10 +8,11 @@ class User {
     public $sconto = 0;
     public $cartaPagamenti;
 
-    public function __construct($_nome, $_cognome, $_email) {
+    public function __construct($_nome, $_cognome, $_email, $_cartaPagamenti) {
         $this->nome = $_nome;
         $this->cognome = $_cognome;
         $this->email = $_email;
+        $this->cartaPagamenti = $_cartaPagamenti;
     }
 
     public function userRegistationCheck() {
@@ -26,5 +28,23 @@ class User {
             $this->carrello[] = $prodottoscelto;
         }
     }
+
+    public function totaleCarrello() {
+        $totale = 0;
+        foreach($this->carrello as $prodottoscelto) {
+            $totale += $prodottoscelto->prezzo;
+        }
+
+        $totale -= $totale * $this->sconto / 100;
+        return $totale;
+        
+    }
+
+    public function pagamentoUtente($cartaPagamenti) {
+        $pagamentoTotale = $this->totaleCarrello();
+
+        var_dump($pagamentoTotale);
+    }
 }
+
 ?>
