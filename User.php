@@ -40,10 +40,14 @@ class User {
         
     }
 
-    public function pagamentoUtente($cartaPagamenti) {
+    public function pagamentoUtente() {
         $pagamentoTotale = $this->totaleCarrello();
-
-        var_dump($pagamentoTotale);
+        
+        if($this->cartaPagamenti->saldoDisponibile < $pagamentoTotale) { 
+            return "pagamento non andato a buon fine, saldo insufficiente";
+        } else {
+            return "pagamaneto andato a buon fine";
+        }
     }
 }
 

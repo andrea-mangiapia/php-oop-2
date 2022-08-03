@@ -35,7 +35,7 @@ $Andrea->cartaPagamenti->nomeUtenteCarta = 'Andrea Bianchi';
 $Andrea->cartaPagamenti->numeroCarta = '5333 1234 1234';
 $Andrea->cartaPagamenti->scadenzaCarta = '12/25';
 $Andrea->cartaPagamenti->cvv = '345';
-$Andrea->cartaPagamenti->saldoDisponibile = 30;
+$Andrea->cartaPagamenti->saldoDisponibile = 50;
 
 $Anonimo = new UserNoRegistered('Anonimo', '-', '-',  new PaymentCard());
 
